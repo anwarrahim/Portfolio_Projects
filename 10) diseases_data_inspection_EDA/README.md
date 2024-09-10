@@ -75,3 +75,16 @@ We note that at least one row contains a `'?'` in this column. We can probably a
 
 Given this information, we now have more to do! We can replace any instance of `'?'` with `np.NaN`, change the data type of this column back to a float or integer, and then re-print the `heart.info()` to determine how many missing values we’ve got. Then, we probably want to do a similar inspection of the `thal` column.
 
+# Inspecting Missing Data
+After identifying that there is some missing data and converting it to a format that Python can recognize, it’s often a good idea to take a closer look at those rows. Sometimes, we can find clues as to WHY the data is missing, which can help us make decisions about whether to get rid of the rows altogether or impute the missing values somehow.
+`heart[heart.isnull().any(axis=1)]`
+
+# Output:
+
+check the output in the file data_inspection_EDA.ipynb on the line Number_____
+
+
+Looking at this output, we note that there is no overlap between the rows with missing ca data and missing thal data. This suggests that these patients are missing ca and thal information for different reasons. We don’t see any immediate clues as to why the data is missing in the first place, but we can inspect this further once we start digging into individual features.
+
+
+
