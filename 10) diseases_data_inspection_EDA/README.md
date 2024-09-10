@@ -62,7 +62,16 @@ output:
 * There are 303 rows and 14 columns of data
 * At first glance, there are no null (i.e., missing) values in any column (we’ll come back to this)
 * The ca and thal columns have a data type of object (which suggests that they are strings), even though we saw in our initial inspection that these columns appear to contain numerical values
-* 
 
+To investigate the unexpected output here, we might want to take a look at the unique values in the ca column:
 
+`print(heart.ca.unique())`
+
+# Output:
+
+check the output in the file data_inspection_EDA.ipynb on the line Number_____
+
+We note that at least one row contains a `'?'` in this column. We can probably assume that this indicates mis-coded missing data. The `'?'` also probably forced the column to be coded as a string because there is no obvious way to cast a '?' to a numerical value.
+
+Given this information, we now have more to do! We can replace any instance of `'?'` with `np.NaN`, change the data type of this column back to a float or integer, and then re-print the `heart.info()` to determine how many missing values we’ve got. Then, we probably want to do a similar inspection of the `thal` column.
 
