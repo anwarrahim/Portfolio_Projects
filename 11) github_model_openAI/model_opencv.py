@@ -33,6 +33,7 @@ def generate_blog_post(details: str):
 
 
 
+
         
     )
 
