@@ -26,6 +26,7 @@ def generate_blog_post(details: str):
         top_p=1.0,
 
 
+
         
     )
 
