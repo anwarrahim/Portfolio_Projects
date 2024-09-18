@@ -25,6 +25,7 @@ def generate_blog_post(details: str):
         max_tokens=1000,
         top_p=1.0,
 
+
         
     )
 
